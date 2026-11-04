@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+    <html>
+     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Personal Website</title>
+
+    <style>
+
+        @media screen and (max-width: 600px) {
+
+                .navbar {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                .navbar a,
+                .dropbtn {
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .dropdown-content {
+                    position: static;
+                }
+
+             body {
+                 font-size: 14px;
+                 padding: 10px;
+                  background-color: white;
+                  color: black;
+                 transition: 0.3s;
+                font - family: Arial;
+                margin: 0;    
+             }
+
+            .main-header nav a {
+                 display: block;
+                 margin: 10px;
+             }
+
+             .profile-card {
+                   flex-direction: column;
+                  text-align: center;
+                }
+
+           img {
+                 max-width: 100%;
+                 height: auto;
+            }
+
+            form {
+              width: 100%;
+              box-sizing: border-box;
+            }
+        }
+           
+            .main-header {
+                  background-color: #17365D;
+                 color: white;
+                text-align: center;
+                border-radius: 10px;
+                  padding: 15px;
+            }
+            .main-footer {
+                 background-color: #17365D;
+                 color: white;
+                text-align: center;
+                padding: 15px;
+                margin-top: 30px;
+                border-radius: 10px;
+            }
+            .main-header nav {
+                 margin-top: 15px;
+            }
+
+            .main-header nav a {
+                  color: white;
+                text-decoration: none;
+                 margin: 15px;
+                font-weight: bold;
+            }
+
+            nav {
+                background - color: navy;
+                padding: 15px;
+                text-align: center;
+            }
+
+            nav a {
+                color: white;
+                margin: 15px;
+                text-decoration: none;
+            }
+
+            header {
+                text - align: center;
+                padding: 40px;
+                background-color: lightblue;
+            }
+
+            section {
+                background - color: white;
+                margin: 20px;
+                padding: 25px;
+            }
+            .skill {
+                  margin-bottom: 20px;
+            }
+            .resume-download {
+                 text-align: center;
+                    padding: 20px;
+                margin: 20px;
+                background-color: #f2f5f9;
+                border-radius: 10px;
+            }
+
+            .resume-download button {
+                 background-color: #17365D;
+                 color: white;
+                  padding: 12px 25px;
+                 border: none;
+                 border-radius: 5px;
+                 cursor: pointer;
+                font-size: 16px;
+            }
+
+            .skill-bar {
+                background-color: #dddddd;
+                width: 100%;
+                height: 25px;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+
+            .skill-level {
+                background-color: #17365D;
+                color: white;
+                height: 25px;
+                text-align: center;
+                line-height: 25px;
+                border-radius: 15px;
+            }
+             .experience-card {
+                background-color: #f2f5f9;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-left: 5px solid #17365D;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .experience-card h3 {
+                color: #17365D;
+            }
+
+            .job-title {
+                font-weight: bold;
+            }
+
+            .period {
+                color: #555555;
+                font-style: italic;
+            }
+
+            .experience-card li {
+                margin-bottom: 8px;
+            }
+
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .gallery img {
+                width: 250px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+                transition: transform 0.5s;
+            }
+
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            .gallery img {
+                cursor: pointer;
+            }
+
+            #lightbox {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.9);
+                justify-content: center;
+                align-items: center;
+            }
+
+            #largeImage {
+                max-width: 85%;
+                max-height: 85%;
+                border-radius: 10px;
+            }
+
+            .close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: white;
+                font-size: 40px;
+                cursor: pointer;
+            }
+
+            #topBtn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #17365D;
+                color: white;
+                padding: 12px 18px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                display: none;
+                font-size: 15px;
+            }
+
+            #topBtn:hover {
+                background-color: #2874A6;
+            }
+
+            #clock-section {
+                text-align: center;
+                padding: 25px;
+                background-color: #f2f5f9;
+                border-radius: 10px;
+                margin: 20px;
+            }
+
+            #digitalClock {
+                font-size: 35px;
+                font-weight: bold;
+                color: #17365D;
+                background-color: white;
+                padding: 15px;
+                border-radius: 10px;
+                display: inline-block;
+            }
+
+
+    /* Dark mode */
+
+            body.dark-mode {
+                background-color: #222222;
+                color: white;
+            }
+
+            body.dark-mode section {
+                background-color: #333333;
+            }
+
+            #themeBtn {
+                background-color: #17365D;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            .hero {
+                background: linear-gradient(
+                    135deg, #17365D, #2874A6                );
+
+                color: white;
+                text-align: center;
+                padding: 70px 20px;
+                border-radius: 12px;
+                margin: 20px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .hero p {
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+
+            .hero-button {
+                background-color: white;
+                color: #17365D;
+                padding: 12px 25px;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+            }
+
+            .slider {
+                text-align: center;
+                padding: 20px;
+            }
+
+            .slider img {
+                width: 100%;
+                max-width: 600px;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .slider-buttons {
+                margin-top: 15px;
+            }
+
+            .slider-buttons button {
+                background-color: #17365D;
+                color: white;
+                padding: 10px 20px;
+                margin: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #search-section {
+                text-align: center;
+                padding: 20px;
+                margin: 20px;
+                background-color: #f2f5f9;
+                border-radius: 10px;
+            }
+
+            #searchInput {
+                padding: 12px;
+                width: 60%;
+                max-width: 350px;
+                border: 1px solid #999;
+                border-radius: 5px;
+            }
+
+            #search-section button {
+                padding: 12px 20px;
+                background-color: #17365D;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .navbar {
+                background-color: #17365D;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                flex-wrap: wrap;
+            }
+
+            .navbar a,
+            .dropbtn {
+                color: white;
+                padding: 15px 20px;
+                text-decoration: none;
+                border: none;
+                background: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .navbar a:hover,
+            .dropbtn:hover {
+                background-color: #2874A6;
+            }
+
+            /* Dropdown menu */
+
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: white;
+                min-width: 150px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+
+            .dropdown-content a {
+                display: block;
+                color: #17365D;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .navbar a.active {
+                background-color: #2874A6;
+                border-bottom: 3px solid yellow;
+            }
+           
+    </style>
+    </head>
+
+<body>
+
+    <header class="main-header">
+
+        <h1>My Personal Website</h1>
+
+        <p>Welcome to my professional profile</p>
+
+        <nav class="navbar">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+
+            <div class="dropdown">
+                  <button class="dropbtn">More ▼</button>
+
+                 <div class="dropdown-content">
+                   <a href="#gallery">Gallery</a>
+                   <a href="#contact">Contact</a>
+                </div>
+
+            </div>
+
+        </nav>      
+    </header>
+
+    <section id="search-section">
+
+    <h2>Search My Website</h2>
+
+    <input type="text" id="searchInput" placeholder="Search here...">
+
+    <button onclick="searchWebsite()">
+        Search
+    </button>
+
+    <p id="searchResult"></p>
+
+    </section>
+
+    <section id="theme-section">
+        <button id="themeBtn" onclick="changeTheme()">
+              Dark Mode
+        </button>
+    </section>
+
+    <section id="clock-section">
+        <h2>Current Time</h2>
+        <div id="digitalClock">
+              00:00:00
+        </div>
+    </section>
+        
+    <section id="home" class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <h2>Store Management Professional</h2>
+            <p>
+                I have experience in store management,
+                purchase coordination and inventory control.
+            </p>
+            <a href="#about" class="hero-button">
+                Explore My Profile
+            </a>
+    </section>
+
+    <section id="about">
+            <h2>About Me</h2>
+            <p>I am learning website development.</p>
+            <div class="resume-download">
+                <h3>Download My Resume</h3>
+                <a href="My resume.pdf" download="My Resume.pdf">
+                    <button type="button">
+                        Download Resume
+                    </button>
+                </a>
+            </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Professional Skills</h2>
+            <div class="skill">
+                <p>Store Management</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;">90%</div>
+                </div>
+            </div>
+        
+            <div class="skill">
+                <p>Purchase Management</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%;">85%</div>
+                </div>
+            </div>
+        
+            <div class="skill">
+                <p>Inventory Control</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;">80%</div>
+                </div>
+            </div>
+        
+            <div class="skill">
+                <p>Computer Skills</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 75%;">75%</div>
+                </div>
+            </div>
+        
+    </section>
+
+    <section id="experience">
+        <h2>My Work Experience</h2>
+        <div class="experience-card">
+            <h3>Shri Guruji Rugnalaya</h3>
+            <p class="job-title">Store Management & Purchase Assistant</p>
+            <p class="period">2014 – Present</p>
+            <ul>
+                <li>Store management</li>
+                <li>Purchase coordination</li>
+                <li>Inventory control</li>
+                <li>Material management</li>
+            </ul>
+        </div>
+            
+        <div class="experience-card">
+            <h3>Dipsreena Electrical Pvt. Ltd.</h3>
+            <p class="job-title">Stores Officer / Executive Stores / Account Executive</p>
+            <p class="period">1998 – 2009</p>
+            <ul>
+                <li>Stores operations</li>
+                <li>Inventory management</li>
+                <li>Accounts department experience</li>
+            </ul>
+        </div>
+    </section>
+  
+    <section id="gallery">
+        <h2>My Photo Gallery</h2>
+        <div class="gallery">
+            <img src="images/photo1.jpg" alt="My Photo" onclick="openImage(this)">
+            <img src="images/photo2.jpg" alt="My Photo" onclick="openImage(this)">
+            <img src="images/photo3.jpg" alt="My Photo" onclick="openImage(this)">
+        </div>
+
+        <div id="lightbox" onclick="closeImage()">
+            <span class="close">&times;</span>
+            <img id="largeImage" alt="Enlarged photo">
+        </div>
+
+    <section id="slider-section">
+        <h2>My Photo Slideshow</h2>
+        <div class="slider">
+            <img id="slideImage" src="images/photo1.jpg" alt="My photograph">
+            <div class="slider-buttons">
+                <button onclick="previousSlide()">
+                    Previous
+                </button>
+                <button onclick="nextSlide()">
+                    Next
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+    
+        <form id="contactForm">
+            <label>Your Name:</label>
+            <input type="text" id="visitorName" required>
+
+            <label>Your Email:</label>
+            <input type="email" id="visitorEmail" required>
+
+            <label>Your Message:</label>
+            <textarea id="visitorMessage" required></textarea>
+
+           <button type="submit">Send Message</button>
+            <p id="result"></p>
+        </form>
+    </section>
+
+<footer class="main-footer">
+    <p>© 2026 My Personal Website</p>
+    <p>Created by Me | All Rights Reserved</p>
+</footer>
+
+<button id="topBtn" onclick="goToTop()">
+    ↑ Back to Top
+</button>
+
+<script>
+    function validateForm() {
+        let name = document.getElementById("visitorName").value;
+
+        let email = document.getElementById("visitorEmail").value;
+
+        if (name == "" || email == "") {
+
+            document.getElementById("result").innerHTML =
+                "Please enter your name and email.";
+
+            return false;
+            }
+
+        document.getElementById("result").innerHTML =
+            "Thank you! Your details are entered.";
+
+        return false;
+    }
+</script>
+
+<script>
+    function openImage(photo) {
+
+        document.getElementById("lightbox").style.display = "flex";
+
+        document.getElementById("largeImage").src = photo.src;
+
+    }
+
+    function closeImage() {
+
+        document.getElementById("lightbox").style.display = "none";
+
+    }
+
+</script>
+
+<script>
+
+    // Show button when visitor scrolls down
+
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > 200) {
+            document.getElementById("topBtn").style.display = "block";
+        } else {
+            document.getElementById("topBtn").style.display = "none";
+        }
+    };
+
+    // Return to the top
+
+    function goToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+</script>
+
+<script>
+    function showClock() {
+
+        let now = new Date();
+
+        let hours = String(now.getHours()).padStart(2, "0");
+
+        let minutes = String(now.getMinutes()).padStart(2, "0");
+
+        let seconds = String(now.getSeconds()).padStart(2, "0");
+
+        let time = hours + ":" + minutes + ":" + seconds;
+
+        document.getElementById("digitalClock").innerHTML = time;
+
+    }
+
+    showClock();
+
+    setInterval(showClock, 1000);
+</script>
+
+<script>
+    function changeTheme() {
+
+        document.body.classList.toggle("dark-mode");
+
+        let button = document.getElementById("themeBtn");
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            button.innerHTML = "Light Mode";
+
+        } else {
+
+            button.innerHTML = "Dark Mode";
+
+        }
+
+    }
+</script>
+
+<script>
+    let photos = [
+        "images/photo1.jpg",
+        "images/photo2.jpg",
+        "images/photo3.jpg"
+    ];
+
+    let currentSlide = 0;
+
+    function showSlide() {
+
+        document.getElementById("slideImage").src =
+            photos[currentSlide];
+
+    }
+
+    function nextSlide() {
+        currentSlide++;
+
+        if (currentSlide >= photos.length) {
+            currentSlide = 0;
+        }
+
+        showSlide();
+
+    }
+
+    function previousSlide() {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = photos.length - 1;
+        }
+
+        showSlide();
+
+    }
+
+    // Automatically change image every 3 seconds
+
+    setInterval(nextSlide, 3000);
+
+</script>
+
+<script>
+    function searchWebsite() {
+
+        let searchText = document
+            .getElementById("searchInput")
+            .value.toLowerCase()
+            .trim();
+
+        let sections = [
+            { name: "home", id: "home" },
+            { name: "about", id: "about" },
+            { name: "skills", id: "skills" },
+            { name: "experience", id: "experience" },
+            { name: "gallery", id: "gallery" },
+            { name: "contact", id: "contact" }
+        ];
+
+        let found = sections.find(function (section) {
+            return section.name.includes(searchText);
+        });
+
+        if (found && searchText !== "") {
+
+            document.getElementById("searchResult").innerHTML =
+                "Section found: " + found.name;
+
+            document.getElementById(found.id).scrollIntoView({
+                behavior: "smooth"
+            });
+
+        } else {
+
+            document.getElementById("searchResult").innerHTML =
+                "No matching section found.";
+
+        }
+
+    }
+</script>
+
+<script>
+
+    let menuLinks = document.querySelectorAll(".navbar a");
+
+    menuLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            menuLinks.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            link.classList.add("active");
+
+        });
+
+    });
+
+</script>
+
+<script>
+
+    document.getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("visitorName").value;
+
+            let email = document.getElementById("visitorEmail").value;
+
+            let message = document.getElementById("visitorMessage").value;
+
+            if (name === "" || email === "" || message === "") {
+
+                document.getElementById("result").innerHTML =
+                    "Please complete all fields.";
+
+                return;
+            }
+
+            let subject = "Website Contact Message";
+
+            let body = "Name: " + name +
+                "\nEmail: " + email +
+                "\nMessage: " + message;
+
+            let mailLink = "mailto:suniladkar37@gmail.com" +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(body);
+
+            window.location.href = mailLink;
+
+        });
+
+</script>
+
+</body>
+
+</html>
