@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+    <html lang="en">
+     <head>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Personal Website</title>
+
+<!-- Link the stylesheet and JavaScript files. -->
+        <link rel="stylesheet" href="style.css">
+        <script src="layout.js" defer></script>
+
+        <script src="script.js" defer></script>
+    </head>
+
+<body>
+
+    <div data-site-header></div>
+
+    <main>
+
+    <!-- About section with a resume download link. -->
+    <section id="about">
+        <h2>About Me</h2>
+
+        <!-- Link to download the resume PDF. -->
+        <div class="hero-actions">
+                <a href="MyResume.pdf" class="btn btn-secondary" download="MyResume.pdf">Download Resume</a>
+        </div> <!-- End of resume download section. -->
+                             
+    </section> <!-- End of about section. -->
+
+    <!-- Professional skills and proficiency levels. -->
+    <section id="skills">
+        <div class="skills-heading">
+            <p class="skills-eyebrow">WHAT I DO</p>
+            <h2>My Professional Skills</h2>
+            <p>A snapshot of the experience and strengths I bring to my work.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill">
+                <div class="skill-label"><h3>Store Management</h3><span>90%</span></div>
+                <div class="skill-bar" role="progressbar" aria-label="Store Management proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill-level" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-label"><h3>Purchase Management</h3><span>85%</span></div>
+                <div class="skill-bar" role="progressbar" aria-label="Purchase Management proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill-level" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-label"><h3>Inventory Control</h3><span>80%</span></div>
+                <div class="skill-bar" role="progressbar" aria-label="Inventory Control proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill-level" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-label"><h3>Computer Skills</h3><span>75%</span></div>
+                <div class="skill-bar" role="progressbar" aria-label="Computer Skills proficiency" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill-level" style="width: 75%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <div data-site-footer></div>
+
+</body> <!-- End of body. -->
+
+</html> <!-- End of HTML document. -->

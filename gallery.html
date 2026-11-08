@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | My Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="layout.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div data-site-header></div>
+
+    <main>
+        <section id="gallery">
+            <h2>My Photo Gallery</h2>
+            <div class="gallery">
+                <img src="images/photo1.jpg" alt="Photo 1" onclick="openImage(this)">
+                <img src="images/photo2.jpg" alt="Photo 2" onclick="openImage(this)">
+                <img src="images/photo3.jpg" alt="Photo 3" onclick="openImage(this)">
+            </div>
+            <div id="lightbox" onclick="closeImage(event)">
+                <span class="close">&times;</span>
+                <img id="largeImage" alt="Enlarged photo">
+            </div>
+        </section>
+    </main>
+
+    <div data-site-footer></div>
+</body>
+</html>
